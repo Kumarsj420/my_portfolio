@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.bg-logo {
+    background-image: linear-gradient(315deg, #55f222, #00fff6 31.98%, #e88aff 66.47%, #ffd719);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+.gr-bg::after {
+    content: "";
+    position: absolute;
+    animation: animategr 2s ease infinite alternate;
+    background-image: linear-gradient(315deg,
+            #55f222,
+            #00fff6 31.98%,
+            #e88aff 66.47%,
+            #ffd719);
+    background-size: 300%;
+    background-position: 0 0;
+    border-radius: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes animategr {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.s-title::after {
+  content: "";
+  border-radius: 50%;
+  animation: my_pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes my_pulse {
+  0% {
+    box-shadow: 0 0 0 0 #00C950;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  100% {
+    box-shadow: 0 0 0 12px #00c95000;
+  }
 }
