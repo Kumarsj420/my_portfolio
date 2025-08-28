@@ -12,13 +12,14 @@ import {
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { Icon } from "@iconify/react";
 
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white dark:bg-zinc-800/85">
+        <header className="bg-white dark:bg-zinc-800 shadow-lg shadow-zinc-950/25 sticky top-0 z-50">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
                 <div className="flex lg:flex-1">
                     <span className='bg-logo text-transparent bg-clip-text text-xl'>{"< " } <span className='font-extrabold'>SK</span> {"/>"}</span>
@@ -35,25 +36,26 @@ export default function Header() {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
 
-                    <a href="#" className="text-sm/6 font-medium text-zinc-900 dark:text-white transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
+                    <a href="#" className="text-base text-zinc-200/85 transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
                         About
                     </a>
-                    <a href="#" className="text-sm/6 font-medium text-zinc-900 dark:text-white transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
+                    <a href="#" className="text-base text-zinc-200/85 transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
                         Work & Experience
                     </a>
-                    <a href="#" className="text-sm/6 font-medium text-zinc-900 dark:text-white transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
+                    <a href="#" className="text-base text-zinc-200/85 transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
                        NextJS Projects
                     </a>
-                    <a href="#" className="text-sm/6 font-medium text-zinc-900 dark:text-white transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
+                    <a href="#" className="text-base text-zinc-200/85 transition relative after:absolute after:left-1/2 after:bottom-0 after:w-0 after:h-[0.1em] after:bg-rose-400 after:transition-all after:duration-300 hover:after:w-full hover:after:left-0 hover:text-rose-500">
                         Case Study
                     </a>
                 </div>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
                     <button
                         type="button"
-                        className="rounded-lg bg-gradient-to-t from-rose-400 to-rose-700 px-3.5 py-1.5 text-sm font-medium text-white hover:brightness-122 focus-visible:outline-2 focus-visible:outline-offset-2  shadow-lg shadow-rose-500/45 hover:shadow-rose-500/65 hover:scale-107 transition-all duration-400 relative after:absolute after:inset-[2px] after:bg-rose-500 z-10 after:-z-10 after:rounded-lg"
+                        className="rounded-lg bg-gradient-to-t from-rose-400 to-rose-700 px-3.5 py-2 text-sm font-medium text-white hover:brightness-122 focus-visible:outline-2 focus-visible:outline-offset-2  shadow-lg shadow-rose-500/45 hover:shadow-rose-500/65 hover:scale-107 transition-all duration-400 relative after:absolute after:inset-[2px] after:bg-rose-500 z-10 after:-z-10 after:rounded-lg flex items-center gap-2"
                     >
-                        Contact Me
+                      <Icon icon="icon-park-outline:message" className='size-5'/>
+                        Contact
                     </button>
                 </div>
             </nav>

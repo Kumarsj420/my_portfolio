@@ -18,8 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.className} bg-zinc-950`}
+        className={`${outfit.className} bg-zinc-900`}
       >
+        <div className="fixed  h-screen w-full -z-10 max-w-7xl px-4 py-10 sm:px-6 lg:px-8  left-1/2 -translate-x-1/2 flex gap-x-8">
+          <div className="w-64"></div>
+          <div className="bg-texture h-full w-full"></div>
+        </div>
         {children}
       </body>
     </html>
