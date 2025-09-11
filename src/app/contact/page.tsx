@@ -4,8 +4,8 @@ import Form from "./form";
 import ContactMap from "./contactMap";
 
 export const metadata: Metadata = {
-    title: "Demo Contact Us",
-    description: "contact demo description",
+    title: "Contact Suraj Kumar | Get in Touch for Web Development & Projects",
+    description: "Have a question or project in mind? Get in touch through our Contact page. We are here to discuss ideas, collaborations, and opportunities.n",
 };
 
 export default function Work() {

@@ -33,7 +33,7 @@ export default function Header() {
                         <Bars3Icon aria-hidden="true" className="size-6" />
                     </button>
                 </div>
-                <div className='flex gap-x-10 items-center'>
+                <div className='hidden lg:flex gap-x-10 items-center'>
                     <div className="hidden lg:flex lg:gap-x-10 ">
                         <NavLink href='/'>About</NavLink>
                         <NavLink href='/work'>Work & Experience</NavLink>

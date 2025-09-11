@@ -3,8 +3,8 @@ import { Head, SubHead, Para, UL, MyTag, MinHead, CustomImg } from "../component
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export const metadata: Metadata = {
-    title: "Case Study Demo Title",
-    description: "case demo description",
+    title: "Tier Cards Case Study | My Creation",
+    description: "Explore our Tier Card case study showcasing modern UI/UX design, responsive layouts, and optimized performance for seamless digital experiences.",
 };
 
 const frontendTech = [

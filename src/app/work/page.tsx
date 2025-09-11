@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Head, SubHead, Para, CustomImg, MinHead, UL } from "../components/decoration";
 
 export const metadata: Metadata = {
-    title: "About Me | My Portfolio",
-    description: "Learn more about me and my background.",
+    title: "Work & Experience | Suraj Kumar – Web Development & Projects",
+    description: "Work & Experience | Suraj Kumar – Web Development Projects.",
 };
 
 

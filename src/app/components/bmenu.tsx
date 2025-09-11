@@ -32,7 +32,6 @@ export default function BottomMenu() {
                 <div className="grid w-full grid-cols-5 divide-x divide-zinc-700">
                     <MenuNav href='/' icon='akar-icons:info' iconSize="size-5 sm:size-6">About</MenuNav>
                     <MenuNav href='/work' icon='gg:work-alt' iconSize="size-6 sm:size-7">Work</MenuNav>
-                    <MenuNav href='/project' icon='ant-design:project-outlined' iconSize="size-6 sm:size-7">Projects</MenuNav>
                     <MenuNav href='/case' icon='ant-design:read-outlined' iconSize="size-6 sm:size-7">Case</MenuNav>
                     <MenuNav href='/contact' icon='icon-park-outline:message' iconSize="size-5 sm:size-6">Contact</MenuNav>
                 </div>
