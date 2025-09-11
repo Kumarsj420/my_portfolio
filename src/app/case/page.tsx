@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Head, SubHead, Para, UL, MyTag, MinHead, CustomImg, Embed } from "../components/decoration";
+import { Head, SubHead, Para, UL, MyTag, MinHead, CustomImg } from "../components/decoration";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export const metadata: Metadata = {
@@ -52,13 +52,6 @@ const vcontrolTech = [
     }
 ]
 
-const editorTech = [
-    {
-        title: 'VS Code',
-        icon: 'devicon:vscode',
-        iconSize: 'size-4 sm:size-5'
-    }
-]
 
 const hostingTech = [
     {

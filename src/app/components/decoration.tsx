@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
 
-
 type Tags = {
     title: string,
     icon: string,
