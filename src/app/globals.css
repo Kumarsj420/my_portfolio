@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
 
 .bg-logo {
   background-image: linear-gradient(315deg, #55f222, #00fff6 31.98%, #e88aff 66.47%, #ffd719);
@@ -52,3 +54,19 @@
   background-size: 100% 100%, 80px 60px, 80px 60px;
 }
 
+body::-webkit-scrollbar {
+  @apply bg-zinc-600 ;
+  width: 0.15em;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  @apply bg-rose-400/95 outline-1 outline-rose-600;
+}
+
+.glass-effect {
+ @apply backdrop-blur-[3px] bg-zinc-700/40 ring-1 ring-zinc-700 shadow-lg shadow-zinc-950/60;
+}

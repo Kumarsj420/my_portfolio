@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import { CustomImg } from "./decoration";
 
 const myList = [
     { icon: 'clarity:email-line', title: 'Email', value: 'kumarsj420@gmail.com', link: 'mailto:kumarsj420@gmail.com' },
@@ -7,18 +9,20 @@ const myList = [
     { icon: 'fluent:location-20-regular', title: 'Location', value: 'Solan (Himachal Pradesh)', link: 'https://www.google.com/maps/place/Solan,Himachal+Pradesh' }
 ]
 
-export default function Sidebar() {
+export function SidebarContent() {
+
     return (
-        <div className="group relative flex grow flex-col gap-y-5 overflow-y-auto  px-6 bg-gradient-to-l from-zinc-700 to-zinc-800/85 before:pointer-events-none rounded-3xl h-full after:absolute after:inset-[0.11em] z-10 after:-z-10 after:bg-zinc-800/85 after:rounded-3xl">
+        <div className="flex grow flex-col gap-y-5 overflow-y-auto h-full px-6 py-2">
             <div className="flex flex-col gap-3.5 pt-4 pb-8 border-b-zinc-700 border-b">
                 <div className="rounded-3xl m-auto w-3/5 aspect-square z-10 relative group-hover:after:absolute group-hover:after:w-[calc(100%+4px)] group-hover:after:h-[calc(100%+4px)] group-hover:after:-z-10  group-hover:after:top-[-2px] group-hover:after:left-[-2px] group-hover:after:rounded-3xl gr-bg transition duration-500 after:opacity-0 group-hover:after:opacity-100 ">
                     <div className="w-full h-full rounded-3xl relative bg-zinc-800">
-                        <div className="absolute bottom-0  left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-br from-zinc-500/90 to-zinc-800 rounded-3xl ring-[0.11em] ring-zinc-500/70 group-hover:ring-0">
-                            <Image
-                                src="/images/me.webp"
+                        <div className="absolute bottom-0  left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-br to-zinc-500/90 from-zinc-800 rounded-3xl ring-[0.11em] ring-zinc-500/70 group-hover:ring-0">
+                            <CustomImg
+                                src="/me.png"
                                 alt="Hero image"
-                                fill
-                                className="object-cover brightness-85 saturate-85 "
+                                fill={true}
+                                sizes="125px"
+                                classNames="object-cover brightness-90 saturate-90 w-full h-full rounded-3xl"
                             />
                         </div>
                     </div>
@@ -55,6 +59,14 @@ export default function Sidebar() {
                     </a>
                 </div>
             </div>
+        </div>
+    )
+}
+
+export default function Sidebar() {
+    return (
+        <div className="group relative bg-gradient-to-l from-zinc-700 to-zinc-800/85 before:pointer-events-none rounded-3xl h-full after:absolute  after:inset-[0.11em] z-10 after:-z-10 after:bg-zinc-800/85 after:rounded-3xl max-h-[1000px] overflow-hidden">
+            <SidebarContent />
         </div>
     )
 }
