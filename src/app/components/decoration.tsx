@@ -1,8 +1,59 @@
 "use client"
 import { Icon } from "@iconify/react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FieldError, UseFormRegister } from "react-hook-form";
+import { motion, useInView, Easing } from "motion/react"
+
+const animationPresets = {
+    slideRight: {
+        initial: { x: 30, opacity: 0 },
+        animate: { x: 0, opacity: 1 },
+    },
+    slideLeft: {
+        initial: { x: -30, opacity: 0 },
+        animate: { x: 0, opacity: 1 },
+    },
+    slideUp: {
+        initial: { y: 30, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+    },
+    slideDown: {
+        initial: { y: -30, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+    },
+    fadeScale: {
+        initial: { scale: 0.6, opacity: 0 },
+        animate: { scale: 1, opacity: 1 },
+    },
+    fadeOnly: {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+    }
+};
+
+export function usePageAnimation(
+    preset: keyof typeof animationPresets = 'slideRight',
+    customConfig?: {
+        duration?: number;
+        ease?: Easing | Easing[];
+        delay?: number;
+    }
+) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: false });
+
+    const { initial, animate } = animationPresets[preset];
+    const { duration = 0.3, ease = "easeInOut", delay = 0 } = customConfig || {};
+
+    return {
+        ref,
+        initial,
+        animate: isInView ? animate : initial,
+        transition: { duration, ease, delay },
+        viewport: { once: false }
+    };
+}
 
 type Tags = {
     title: string,
@@ -11,11 +62,15 @@ type Tags = {
 }
 
 export function MyTag({ title, icon, iconSize }: Tags) {
+    const tagAnime = usePageAnimation('fadeScale', { duration: 0.2 });
     return (
-        <div className="text-zinc-300 px-4 py-3 bg-gradient-to-b from-zinc-700 to-zinc-800 w-max rounded-full relative z-10 after:absolute after:-z-10 after:inset-[0.11em] after:bg-zinc-800 after:rounded-full flex items-center gap-2.5 font-medium shadow shadow-zinc-950/70 cursor-default hover:scale-105 hover:brightness-125 transition duration-200 text-sm sm:text-base">
+        <motion.div
+            {...tagAnime}
+            whileHover={{ scale: 1.05, filter: 'brightness(1.26)' }}
+            className="text-zinc-300 px-4 py-3 bg-gradient-to-b from-zinc-700 to-zinc-800 w-max rounded-full relative z-10 after:absolute after:-z-10 after:inset-[0.11em] after:bg-zinc-800 after:rounded-full flex items-center gap-2.5 font-medium shadow shadow-zinc-950/70 cursor-default  text-sm sm:text-base">
             <Icon icon={icon} className={`${iconSize ?? 'size-5 sm:size-6'}`} />
             <span>{title}</span>
-        </div>
+        </motion.div>
     )
 }
 
@@ -28,10 +83,12 @@ type Cards = {
 
 
 export function DoCards({ tlIconColor, icon, title, p }: Cards) {
-
+    const doAnime = usePageAnimation('fadeScale', { duration: 0.3 });
     return (
-        <div
-            className="bg-gradient-to-b from-zinc-700 to-zinc-800 px-8 py-7 rounded-xl relative  after:absolute after:inset-[0.11em] after:bg-zinc-800 after:rounded-xl z-10 after:-z-10 flex gap-7 items-start shadow-lg shadow-zinc-950/45 hover:scale-103 hover:brightness-125 transition duration-200">
+        <motion.div
+            {...doAnime}
+            whileHover={{ scale: 1.04, filter: 'brightness(1.26)' }}
+            className="bg-gradient-to-b from-zinc-700 to-zinc-800 px-6 py-5 lg:px-8 lg:py-7 rounded-xl relative  after:absolute after:inset-[0.11em] after:bg-zinc-800 after:rounded-xl z-10 after:-z-10 flex gap-7 items-start shadow-lg shadow-zinc-950/45">
             <div className={`p-3.5 ${tlIconColor[0]} w-max aspect-square rounded-full shadow-lg shadow-zinc-900/30`}>
                 <Icon icon={icon} className={`${tlIconColor[1]} size-8 sm:size-9`} />
             </div>
@@ -39,7 +96,7 @@ export function DoCards({ tlIconColor, icon, title, p }: Cards) {
                 <h3 className="text-white text-lg sm:text-xl font-medium mb-1.5">{title}</h3>
                 <p className="text-zinc-300 font-light text-sm sm:text-base">{p}</p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
@@ -47,12 +104,58 @@ type ChildProp = {
     children: React.ReactNode
 }
 
-export function Head({ children }: ChildProp) {
+export function MotionLeft({ children }: ChildProp) {
+    const animationProps = usePageAnimation('slideLeft', { duration: 0.3 });
     return (
-        <h1
+        <motion.div
+            {...animationProps}
+        >
+            {children}
+        </motion.div>
+    )
+}
+
+export function MotionScale({ children }: ChildProp) {
+    const animationProps = usePageAnimation('fadeScale', { duration: 0.3 });
+    return (
+        <motion.div
+            {...animationProps}
+        >
+            {children}
+        </motion.div>
+    )
+}
+
+export function MotionRight({ children }: ChildProp) {
+    const animationProps = usePageAnimation('slideRight', { duration: 0.3 });
+    return (
+        <motion.div
+            {...animationProps}
+        >
+            {children}
+        </motion.div>
+    )
+}
+
+export function MotionUp({ children }: ChildProp) {
+    const animationProps = usePageAnimation('slideUp', { duration: 0.3 });
+    return (
+        <motion.div
+            {...animationProps}
+        >
+            {children}
+        </motion.div>
+    )
+}
+
+export function Head({ children }: ChildProp) {
+    const animationProps = usePageAnimation('slideRight', { duration: 0.3 });
+    return (
+        <motion.h1
+            {...animationProps}
             className="py-1 text-3xl font-semibold sm:text-4xl text-white">
             {children}
-        </h1>
+        </motion.h1>
     )
 }
 
@@ -75,7 +178,7 @@ export function MinHead({ children }: ChildProp) {
 export function Para({ children }: ChildProp) {
     return (
         <p
-            className="mt-3.5 font-light text-sm sm:text-base text-zinc-300/95 hover:text-white transition duration-200 flex flex-col gap-3.5">
+            className="mt-3.5 font-light text-sm sm:text-base text-zinc-300/95 hover:text-white flex flex-col gap-3.5">
             {
                 children
             }
@@ -83,7 +186,18 @@ export function Para({ children }: ChildProp) {
     )
 }
 
+export function MotionPara({ children }: ChildProp) {
+    const animationProps = usePageAnimation('slideUp', { duration: 0.3 });
 
+    return (
+        <motion.p
+            {...animationProps}
+            className="mt-3.5 font-light text-sm sm:text-base text-zinc-300/95 hover:text-white flex flex-col gap-3.5"
+        >
+            {children}
+        </motion.p>
+    );
+}
 
 export function UL({ children }: ChildProp) {
     return (
@@ -197,7 +311,9 @@ export function CustomImg({
 export function Logo() {
     return (
         <div className="flex lg:flex-1">
-            <span className='text-zinc-200 text-xl'>{"< "} <span className='font-extrabold bg-logo text-transparent bg-clip-text'>Suraj</span> {"/>"}</span>
+            <span className='text-zinc-300/90 text-2xl flex gap-1 items-center'>{"< "} 
+                 <CustomImg src="/slogo.webp" alt='logo' width={24} height={24} />
+                 {"/>"}</span>
         </div>
     )
 }

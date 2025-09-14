@@ -1,6 +1,6 @@
 
 import React from "react";
-import { MyTag, DoCards, SubHead, Para, Head } from "./components/decoration";
+import { MyTag, DoCards, SubHead, MotionPara, Head } from "./components/decoration";
 
 const cSkills = [
   {
@@ -84,7 +84,7 @@ const cardContent = [
 export default function Home() {
   return (
     <div>
-      <section className="mt-3">
+      <section className="lg:mt-2.5">
         <Head>
           <span className="relative z-10 after:absolute  after:inset-0 after:-z-10 after:rounded-full after:bg-cyan-200/75 after:opacity-20 after:blur-xl hover:after:opacity-30">
             Hi, I'm <span className=" bg-logo text-transparent bg-clip-text">
@@ -93,7 +93,7 @@ export default function Home() {
           </span>
         </Head>
 
-        <Para>
+        <MotionPara>
           <span>
             Over the past few years, I’ve had the chance to work with startups across a range of industries, including cybersecurity, legal services, design, and tech tools. From building websites for ethical hacking tools to creating online platforms for lawyers and creative professionals, I’ve worn multiple hats – blending technical skills with a strong eye for design and usability.
           </span>
@@ -106,12 +106,12 @@ export default function Home() {
           <span>
             Always curious and driven to learn, I keep up with the latest technologies to improve my workflow and deliver better results.
           </span>
-        </Para>
+        </MotionPara>
 
       </section>
       <section className="mt-12">
         <SubHead>What I Do?</SubHead>
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 grid-rows-2 gap-8">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 grid-rows-2 gap-6 lg:gap-8">
           {
             cardContent.map((item) => (
               <DoCards key={item.title} tlIconColor={item.iconColor} title={item.title} p={item.p} icon={item.icon} />

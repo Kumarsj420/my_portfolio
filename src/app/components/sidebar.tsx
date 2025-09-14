@@ -21,7 +21,7 @@ export function SidebarContent() {
                                 alt="Hero image"
                                 fill={true}
                                 sizes="125px"
-                                classNames="object-cover brightness-90 saturate-90 w-full h-full rounded-3xl"
+                                classNames="object-cover brightness-90 saturate-90 w-full h-full rounded-3xl group-hover:brightness-103"
                             />
                         </div>
                     </div>
@@ -55,6 +55,9 @@ export function SidebarContent() {
                     </a>
                     <a href="https://www.instagram.com/suraj_k.11/?next=%2F" target="_blank" className="text-zinc-400/80 hover:text-rose-400">
                         <Icon icon="mdi:instagram" className="size-6" />
+                    </a>
+                    <a href="https://wa.me/8219575377" target="_blank" className="text-zinc-400/80 hover:text-rose-400">
+                        <Icon icon="flowbite:whatsapp-solid" className="size-6" />
                     </a>
                 </div>
             </div>
