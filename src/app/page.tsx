@@ -25,12 +25,24 @@ const cSkills = [
     icon: 'devicon:react'
   },
   {
+    title: 'Express',
+    icon: 'skill-icons:expressjs-dark'
+  },
+  {
     title: 'Next JS',
     icon: 'devicon:nextjs'
   },
   {
     title: 'Type Script',
     icon: 'skill-icons:typescript',
+  },
+  {
+    icon: 'skill-icons:php-dark',
+    title: 'PHP',
+  },
+  {
+    icon: 'vscode-icons:file-type-sql',
+    title: "SQL"
   }
 ];
 
