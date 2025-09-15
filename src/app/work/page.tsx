@@ -170,7 +170,7 @@ export default function Work() {
                                     <li className="list-disc marker:text-rose-400 "> <span className="text-white underline">Design Approach</span>  → Focused on a minimalist and professional UI, ensuring the site feels authoritative yet simple for visitors.</li>
                                 </UL>
 
-                                <a href="https://cyberkatha.com/" rel="nofollow" target="_blank" className="flex flex-wrap gap-4 mt-5">
+                                <a href="https://advocateprabhat.com/" rel="nofollow" target="_blank" className="flex flex-wrap gap-4 mt-5">
                                     <button
                                         type="button"
                                         className="inline-flex items-center gap-x-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600/90  px-3.5 py-2.5 hover:from-amber-400 hover:to-amber-500 transition-all duration-300 transform hover:scale-105 text-white cursor-pointer font-medium focus-visible:outline-2 focus-visible:outline-offset-2 "
