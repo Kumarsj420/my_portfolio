@@ -22,7 +22,9 @@ export default function Header() {
     return (
         <header className="bg-zinc-800 shadow-lg shadow-zinc-950/25 sticky top-0 z-50">
             <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
-                <Logo />
+                <Link href='/'>
+                    <Logo />
+                </Link>
                 <div className="flex lg:hidden">
                     <button
                         type="button"

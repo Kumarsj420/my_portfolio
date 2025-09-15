@@ -310,10 +310,8 @@ export function CustomImg({
 
 export function Logo() {
     return (
-        <div className="flex lg:flex-1">
-            <span className='text-zinc-300/90 text-2xl flex gap-1 items-center'>{"< "} 
-                 <CustomImg src="/slogo.webp" alt='logo' width={24} height={24} />
-                 {"/>"}</span>
+          <div className="flex lg:flex-1">
+            <span className='text-zinc-300/90 font-light'>{"< "} <span className='font-extrabold bg-logo text-transparent bg-clip-text text-xl'>Suraj</span> {"/>"}</span>
         </div>
     )
 }
